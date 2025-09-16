@@ -8,8 +8,10 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.json()); 
 const authRouter = require('./route/Auth'); 
+const patientRouter = require('./route/patientAuth');
 app.use("/user", authRouter);
+app.use("/patient", patientRouter);
 
 app.listen(port, () => { 
     console.log(`Server is listening at http://localhost:${port}`);
-});
+});  
